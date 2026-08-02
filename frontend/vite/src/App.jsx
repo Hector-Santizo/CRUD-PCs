@@ -309,6 +309,9 @@ function App() {
             </button>
           </form>
         </div>
+        <footer className="app-footer" style={{ position: 'absolute', bottom: '1rem', background: 'transparent', borderTop: 'none' }}>
+          <span>©</span> <span>2026 Hetsan. Todos los derechos reservados.</span>
+        </footer>
       </div>
     )
   }
@@ -640,6 +643,11 @@ function App() {
           </div>
         </div>
       )}
+
+      {/* Footer Institucional */}
+      <footer className="app-footer">
+        <span>©</span> <span>2026 Hetsan. Todos los derechos reservados.</span>
+      </footer>
     </div>
   )
 }
