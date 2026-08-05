@@ -15,7 +15,6 @@ app.use(cors({
 app.use(express.json());
 
 //Conexion de base de datos
-const { Pool } = require('pg');
 
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
