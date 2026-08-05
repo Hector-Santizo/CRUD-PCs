@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 
 // URL base del backend Express
-const API_URL = 'https://vercel.app'
+const API_URL = 'https://crud-p-cs.vercel.app/api'
 
 function App() {
   // -------------------------------------------------------------
