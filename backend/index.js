@@ -7,18 +7,23 @@ require('dotenv').config();
 
 //Middlewares
 const app = express();
-const PORT = 300;
-app.use(cors());
+const PORT = process.env.PORT || 3000;
+app.use(cors({
+    origin: 'https://crud-p-cs-r7aw.vercel.app',
+    credentials: true
+}));
 app.use(express.json());
 
 //Conexion de base de datos
+const { Pool } = require('pg');
+
 const pool = new Pool({
-    user: process.env.DB_USER,
-    host: process.env.DB_HOST,
-    database: process.env.DB_NAME,
-    password: process.env.DB_PASSWORD,
-    port: process.env.DB_PORT,
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false
+    }
 });
+
 
 // GET todas las computadoras
 app.get('/api/computadoras', async (req, res) => {
