@@ -1,0 +1,10 @@
+{
+    "providers": [
+        "node"
+    ],
+    "buildImage": "ghcr.io/railwayapp/nixpacks:ubuntu-1688427218",
+    "variables": {
+        "NIXPACKS_BUILD_CMD": "cd backend && npm install",
+        "NIXPACKS_START_CMD": "cd backend && node index.js"
+    }
+}
