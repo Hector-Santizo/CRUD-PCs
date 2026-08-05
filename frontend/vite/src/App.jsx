@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 
 // URL base del backend Express
-const API_URL = 'http://localhost:3000/api'
+const API_URL = 'https://vercel.app'
 
 function App() {
   // -------------------------------------------------------------
@@ -180,7 +180,7 @@ function App() {
     }
 
     try {
-      const url = editingPc 
+      const url = editingPc
         ? `${API_URL}/computadoras/${editingPc.id_compu}`
         : `${API_URL}/computadoras`
 

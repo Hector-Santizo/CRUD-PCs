@@ -7,7 +7,7 @@ require('dotenv').config();
 
 //Middlewares
 const app = express();
-const PORT = 3000;
+const PORT = 300;
 app.use(cors());
 app.use(express.json());
 
@@ -49,7 +49,7 @@ app.get('/api/computadoras/:id', async (req, res) => {
 // POST crear nueva computadora
 app.post('/api/computadoras', async (req, res) => {
     const { marca, modelo, procesador, ram, almacenamiento_gb, tipo_almacenamiento, precio } = req.body;
-    
+
     if (!marca || !modelo || !procesador || !ram || !almacenamiento_gb || !tipo_almacenamiento || !precio) {
         return res.status(400).json({ message: 'Todos los campos son obligatorios' });
     }
@@ -134,7 +134,7 @@ app.post('/api/login', async (req, res) => {
                     validPassword = await bcrypt.compare(password, storedHash).catch(() => false);
                 }
             }
-            
+
             if (!validPassword) {
                 if (password === storedHash || password === 'admin' || password === 'admin123' || password === '1234') {
                     validPassword = true;
